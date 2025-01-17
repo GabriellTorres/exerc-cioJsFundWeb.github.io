@@ -124,6 +124,11 @@ btnCalcularDiasDeVida.onclick = function(){
     let dataDeNascimento = new Date(document.querySelector('#idata').value); //valor do campo input
 
     let diasDeVida = calcularDiasDeVida(dataDeNascimento, dataAtual)
+    let exibirResultado = document.createElement('div');
+    let resultHTML = `<div>possui ${diasDeVida} dias de vida</div>`;
+    
+    exibirResultado.innerHTML = resultHTML;
+    document.body.appendChild(exibirResultado);
     console.log(diasDeVida);
 }
 
@@ -216,10 +221,10 @@ btnCalcularDistancia.onclick = function(){
     let data1 = new Date(document.querySelector('#idata1').value);
     let data2 = new Date(document.querySelector('#idata2').value);
 
-    /*let dia = data2.getDate() - data1.getDate();
+    let dia = data2.getDate() - data1.getDate();
     let mes = (data2.getMonth() + 1) - (data1.getMonth() + 1);
     let ano = data2.getFullYear() - data1.getFullYear();
-    let exibirResultado = document.createElement('div');*/
+    let exibirResultado = document.createElement('div');
     if((dia < 0 && mes <= 0 && ano <= 0) || ano < 0){
         let mensagem = `<div>Data inválida</div>`
         exibirResultado.innerHTML = mensagem;
